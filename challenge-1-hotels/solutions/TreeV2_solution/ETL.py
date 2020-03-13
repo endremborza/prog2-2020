@@ -11,7 +11,7 @@ df = df[['name','lon','lat']]
 df.to_pickle('accommodations')
 
 
-bt = BallTree(np.deg2rad(df[['lat', 'lon']].values))
+bt = BallTree(df[['lat', 'lon']].values)
 
 with open('Ball_Tree', 'wb') as f:
     pickle.dump(bt, f)
